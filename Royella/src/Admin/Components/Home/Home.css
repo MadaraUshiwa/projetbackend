@@ -1,0 +1,158 @@
+.backoffice {
+    font-family: "Arial", sans-serif;
+    background-color: white;
+    border: 1px solid #b18d60;
+    overflow: auto;
+}
+
+.backoffice h1 {
+    font-size: 35px;
+    color: #b18d60;
+}
+
+.backoffice h3 {
+    color: #b18d60;
+    font-size: 25px;
+    text-decoration: overline;
+}
+
+.backoffice-header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.backoffice-content {
+    background-color: white;
+} 
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid #b18d60;
+}
+
+table {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+table thead{
+    width: 100%;
+    display: flex;
+    border: 1px solid #b18d60;
+}
+
+table thead tr, table tbody tr {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid #b18d60;
+}
+
+table tbody tr td, table tbody tr th {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-col {
+    width: 10%;
+}
+
+.first-col {
+    width: 10%;
+}
+
+.modifs-col {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.modifs-col:hover {
+    cursor: move;
+}
+
+.add {
+    color: #b18d60;
+    font-weight: normal;
+    border: 1px solid #b18d60;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.add:hover {
+    background-color: #b18d60;
+    color: black;
+}
+
+.edit {
+    color: #487baa;
+}
+
+.edit:hover {
+    color: #2e599e;
+    cursor: move;
+}
+
+.delete {
+    color: #b14a4a;
+}
+
+.delete:hover {
+    color: #8e3f3f;
+    cursor: move;
+}
+
+.back{
+    color: #b18d60;
+    font-weight: normal;
+    border: 1px solid #b18d60;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+}
+
+.confirm {
+    color: #b18d60;
+    font-weight: normal;
+    border: 1px solid #b18d60;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.ajouter{
+    color: #b18d60;
+    font-weight: normal;
+    border: 1px solid #b18d60;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.titre{
+    color: #b18d60;
+    font-size: 25px;
+    text-decoration: overline;
+}

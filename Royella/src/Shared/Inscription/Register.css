@@ -1,0 +1,21 @@
+/* Register.css */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    padding: 40px;
+    margin-top: 5%;
+  }
+  
+  .register-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .register-form button {
+    padding: 10px;
+    background-color: rgb(193, 157, 104);
+    color: white;
+    cursor: pointer;
+  }
