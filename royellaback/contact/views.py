@@ -14,3 +14,12 @@ import json
 def contact(request):
     contact = ContactSerializer(Contact.objects.get(id=1))
     return JsonResponse({"contact" : contact.data})
+
+@api_view(['PUT'])
+def updateContact(request):
+    contact = Contact.objects.get(id=1)
+    contacts = ContactSerializer(contact, data=request.data)
+    if contacts.is_valid():
+        contacts.save()
+        return Response ({'success':'Élément modifié'})
+    return Response(contact.errors)        

@@ -1,0 +1,90 @@
+.table-manager-container table {
+    width: 100%;
+}
+
+.table-manager-container table thead tr {
+    width: 40%;
+}
+
+.table-manager-container table .first-col {
+    width: 10%;
+}
+
+.table-manager-container table .facilities-last-col {
+    width: 10%;
+}
+
+.table-manager-container table tbody tr {
+    height: 80%;
+}
+
+.table-manager-container table tbody tr .first-col {
+    width: 10%;
+}
+
+.table-manager-container table tbody tr .facilities-last-col {
+    width: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.table-manager-container table tbody tr td {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.table-manager-container table tbody tr td span {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-employees-container table {
+    width: 100%;
+}
+
+.table-employees-container table thead tr {
+    width: 20%;
+}
+
+.table-employees-container table .first-col {
+    width: 10%;
+}
+
+.table-employees-container table .services-last-col {
+    width: 10%;
+}
+
+.table-employees-container table tbody tr {
+    height: 120px;
+}
+
+.table-employees-container table tbody tr .first-col {
+    width: 10%;
+}
+
+.table-employees-container table tbody tr .services-last-col {
+    width: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.table-employees-container table tbody tr td {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.table-employees-container table tbody tr td img {
+    width: 50%;
+    height: 100%;
+}
+
+.table-employees-container table tbody tr td span {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

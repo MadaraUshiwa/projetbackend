@@ -6,6 +6,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('testimonial/', testimonial),
+    path('createTestimonial/', createTestimonial),
+    path('deleteTestimonial/<int:id>/', deleteTestimonial),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

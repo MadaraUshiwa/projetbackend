@@ -1,0 +1,98 @@
+.table-facilities-container table {
+    width: 100%;
+}
+
+.table-facilities-container table thead tr {
+    width: 40%;
+}
+
+.table-facilities-container table .first-col {
+    width: 10%;
+}
+
+.table-facilities-container table .facilities-last-col {
+    width: 10%;
+}
+
+.table-facilities-container table tbody tr {
+    height: 50px;
+}
+
+.table-facilities-container table tbody tr .first-col {
+    width: 10%;
+}
+
+.table-facilities-container table tbody tr .facilities-last-col {
+    width: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.table-facilities-container table tbody tr td {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.table-facilities-container table tbody tr td span {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-services-container table {
+    width: 100%;
+}
+
+.table-services-container table thead tr {
+    width: 21%;
+}
+
+.table-services-container table .first-col {
+    width: 5%;
+}
+
+.table-services-container table .services-last-col {
+    width: 5%;
+}
+
+.table-services-container table .order-col {
+    width: 7%;
+}
+
+.table-services-container table tbody tr {
+    height: 120px;
+}
+
+.table-services-container table tbody tr .first-col {
+    width: 5%;
+}
+
+.table-services-container table tbody tr .services-last-col {
+    width: 5%;
+    display: flex;
+    gap: 8px;
+}
+
+.table-services-container table tbody tr .order-col {
+    width: 7%;
+}
+
+.table-services-container table tbody tr td {
+    width: 21%;
+    display: flex;
+    justify-content: center;
+}
+
+.table-services-container table tbody tr td img {
+    width: 70%;
+    height: 100%;
+}
+
+.table-services-container table tbody tr td span {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

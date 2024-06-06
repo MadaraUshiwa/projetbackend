@@ -15,3 +15,11 @@ import json
 def manager(request):
     managers = ManagerSerializer(Manager.objects.first(), many=False)
     return JsonResponse({"managers" : managers.data})
+@api_view(['PUT'])
+def updateManager(request):
+    manager = Manager.objects.get(id=1)
+    managers = ManagerSerializer(manager, data=request.data)
+    if managers.is_valid():
+        managers.save()
+        return Response ({'success':'Élément modifié'})
+    return Response({'error':'Erreur, élément non modifié'})  

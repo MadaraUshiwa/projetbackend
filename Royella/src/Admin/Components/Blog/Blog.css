@@ -1,0 +1,42 @@
+.table-blogs-container table {
+    width: 100%;
+}
+
+.table-blogs-container table thead tr {
+    width: 40%;
+}
+
+.table-blogs-container table .first-col {
+    width: 10%;
+}
+
+.table-blogs-container table .facilities-last-col {
+    width: 10%;
+}
+
+.table-blogs-container table tbody tr {
+    height: 150px;
+}
+
+.table-blogs-container table tbody tr .first-col {
+    width: 10%;
+}
+
+.table-blogs-container table tbody tr .facilities-last-col {
+    width: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.table-blogs-container table tbody tr td {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.table-blogs-container table tbody tr td span {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

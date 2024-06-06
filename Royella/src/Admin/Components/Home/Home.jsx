@@ -52,7 +52,7 @@ export default function Home() {
                                     <td>{banner.stars}</td>
                                     <td><img src={`http://127.0.0.1:8000${banner.image}`} alt={banner.titre} /></td>
                                     <td className='last-col modifs-col'>
-                                        <Link to={`/admin/banner/update/${banner.id}`}><i class="gg-edit-markup"></i></Link>
+                                        <Link to={`/admin/banner/update/${banner.id}`}><i className="gg-edit-markup"></i></Link>
                                         <i onClick={() => erase(banner.id)} className="gg-remove delete"></i>
                                     </td>
                                 </tr>

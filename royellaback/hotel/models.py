@@ -6,7 +6,5 @@ class hotel(models.Model):
     titre = models.CharField(max_length=70)
     description = models.TextField()
     video = models.CharField(max_length=400)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
     localisation = models.CharField(max_length=100)
-    
-    

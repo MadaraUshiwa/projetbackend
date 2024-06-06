@@ -8,8 +8,9 @@ import { useEffect, useState } from "react";
 import { SiOnlyoffice } from "react-icons/si";
 import axios from "axios";
 
-const role = localStorage.getItem('role');
 const Navbar = () => {
+
+  const [utilisateur, setUtilisateur] = useState({});
   // modal openar
   const [isOpen, setIsOpen] = useState(false);
   // dark mode toggle bar
@@ -32,21 +33,21 @@ const Navbar = () => {
     localStorage.setItem("darkMode", newMode);
   };
 
-  const logout = () => {
-    const refresh_token = localStorage.getItem('refresh_token');
+//   const logout = () => {
+//     const refresh_token = localStorage.getItem('refresh_token');
 
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('refresh_token');
+//     localStorage.removeItem('access_token');
+//     localStorage.removeItem('refresh_token');
 
-    axios.post('http://127.0.0.1:8000/api/logout/', { refresh_token })
-        .then(response => { 
-            console.log(response.data.message);
-            window.location.href = "/";
-        })
-        .catch(error => { 
-            console.log(error);
-        });
-}
+//     axios.post('http://127.0.0.1:8000/api/logout/', { refresh_token })
+//         .then(response => { 
+//             console.log(response.data.message);
+//             window.location.href = "/";
+//         })
+//         .catch(error => { 
+//             console.log(error);
+//         });
+// }
 
   useEffect(() => {
     if (isDarkMode) {
@@ -55,6 +56,24 @@ const Navbar = () => {
       document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
+
+  useEffect(() => {
+    try {
+        const token = localStorage.getItem("access_token")
+        axios.get('http://127.0.0.1:8000/api/getUser/', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setUtilisateur(response.data.user)
+                console.log(response.data.user);
+            })
+
+    } catch (error) {
+        console.log(error);
+    }
+}, [])
 
   return (
     <nav
@@ -134,9 +153,8 @@ const Navbar = () => {
             >
               <span className="flex items-center">
                 Home
-                <BiChevronDown className="ml-1" />
               </span>
-              <div className="absolute pt-5 lg:pt-8 z-20">
+              {/* <div className="absolute pt-5 lg:pt-8 z-20">
                 <ul className="shadow-2xl hidden group-hover:block rounded-sm bg-white text-black w-[200px] text-left dark:bg-normalBlack dark:text-white transition-all duration-500 text-sm py-4 ">
                   <div className=" px-5 group hover:bg-khaki hover:text-white">
                     <li className="hover:ml-3 duration-300  ">
@@ -177,7 +195,7 @@ const Navbar = () => {
                     </li>
                   </div>
                 </ul>
-              </div>
+              </div> */}
             </NavLink>
             <NavLink
               className={`${({ isActive, isPending }) =>
@@ -348,11 +366,10 @@ const Navbar = () => {
             <Link to="/find_room">
               <button className="btn-secondary ">Booking</button>
             </Link>
-            <Link to="/Login">
-            <button className="btn-primary-admin">LOGIN</button>
-            </Link>
-            <Link to="/Register">
-            <button className="btn-primary-admin">INSCRIPTION</button>
+            {utilisateur ? (
+            <>
+            <Link to="/admin">
+                <button className="btn-primary-admin">Admin</button>
             </Link>
             <Link onClick={() => {
                 localStorage.removeItem('access_token');
@@ -361,11 +378,15 @@ const Navbar = () => {
               }}>
               <button className="btn-primary-admin">LOGOUT</button>
             </Link>
-            {role === '1' && (
-            <Link to="/admin">
-                <button className="btn-primary-admin">Admin</button>
+            </>
+            ) : <>
+            <Link to="/Login">
+            <button className="btn-primary-admin">LOGIN</button>
             </Link>
-            )}
+            <Link to="/Register">
+            <button className="btn-primary-admin">INSCRIPTION</button>
+            </Link>
+            </>}
           </div>
         </div>
       </div>

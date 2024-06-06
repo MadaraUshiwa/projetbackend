@@ -36,6 +36,25 @@ import Register from "../Shared/Inscription/Register";
 import Home from "../Admin/Components/Home/Home";
 import HomeCreate from "../Admin/Components/Home/HomeCreate/HomeCreate";
 import HomeUpdate from "../Admin/Components/Home/HomeUpdate/HomeUpdate";
+import ContactUpdate from "../Admin/Components/Contact/ContactUpdate/ContactUpdate"
+import ContactAdmin from "../Admin/Components/Contact/Contact"
+import AboutAdmin from "../Admin/Components/About/About"
+import AboutUpdate from "../Admin/Components/About/AboutUpdate/AboutUpdate"
+import BlogAdmin from '../Admin/Components/Blog/Blog'
+import BlogUpdate from '../Admin/Components/Blog/BlogUpdate/BlogUpdate'
+import BlogCreate from '../Admin/Components/Blog/BlogCreate/BlogCreate'
+import Faq from '../Admin/Components/Faq/Faq'
+import FaqCreate from '../Admin/Components/Faq/FAQCreate/FAQCreate'
+import ServicesAdmin from '../Admin/Components/Services/Services'
+import CreateServices from "../Admin/Components/Services/CreateServices/CreateServices";
+import UpdateServices from "../Admin/Components/Services/UpdateServices/UpdateServices";
+import Staff from "../Admin/Components/Staff/Staff";
+import StaffCreate from "../Admin/Components/Staff/StaffCreate/StaffCreate";
+import StaffUpdate from "../Admin/Components/Staff/StaffUpdate/StaffUpdate";
+import ManagerUpdate from '../Admin/Components/Staff/ManagerUpdate/ManagerUpdate'
+import Testimonial from "../Admin/Components/Testimonial/Testimonial";
+import TestimonialCreate from "../Admin/Components/Testimonial/TestimonialCreate/TestimonialCreate";
+
 
 // Starting React Router.
 const router = createBrowserRouter([
@@ -85,7 +104,7 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
       {
-        path: "/blog_details",
+        path: "/blog_details/:id",
         element: <BlogDetails />,
       },
       {
@@ -120,6 +139,82 @@ const router = createBrowserRouter([
         path: "/admin/banner/update/:id",
         element: <HomeUpdate />,
       },
+      {
+        path : "/admin/contact",
+        element : <ContactAdmin/>
+      },
+      {
+        path : "/admin/contact/update",
+        element : <ContactUpdate/>
+      },
+      {
+        path : "/admin/services",
+        element : <ServicesAdmin/>
+      },
+      {
+        path : "/admin/services/update/:id",
+        element : <UpdateServices/>
+      },
+      {
+        path : '/admin/services/add',
+        element : <CreateServices/>
+      },
+      {
+        path : '/admin/about',
+        element : <AboutAdmin/>
+      },
+      {
+        path : '/admin/about/update',
+        element : <AboutUpdate/>
+      },
+      {
+        path : '/admin/staff',
+        element : <Staff/>
+      },
+      {
+        path : '/admin/staff/manager/update',
+        element : <ManagerUpdate/>
+      },
+      {
+        path : '/admin/staff/update/:id',
+        element : <StaffUpdate/>
+      },
+      {
+        path : '/admin/staff/add',
+        element : <StaffCreate/>
+      },
+      {
+        path : '/admin/faq',
+        element : <Faq/>
+      },
+      {
+        path : '/admin/faq/add',
+        element : <FaqCreate/>
+      },
+      {
+        path : '/admin/blog',
+        element : <BlogAdmin/>
+      },
+      {
+        path : '/admin/blog/add',
+        element : <BlogCreate/>
+      },
+      {
+        path : '/admin/blog/update/:id',
+        element : <BlogUpdate/>
+      },
+      {
+        path : '/admin/testimonials',
+        element : <Testimonial/>
+      },
+      {
+        path : '/admin/testimonials/add',
+        element : <TestimonialCreate/>
+      },
+      {
+        path : '/admin/blogs/update/:id',
+        element : <BlogUpdate/>
+      }
     ],
   },
   // second homepage

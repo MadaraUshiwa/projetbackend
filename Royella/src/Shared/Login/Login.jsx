@@ -33,7 +33,7 @@ export default function Login() {
                 <div className="login_right_form">
                     <form onSubmit={handleSubmit}>
                         <div className="login_right_form_email">
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username">E-mail</label>
                             <input type="text" id="email" name='username' value={formLogin.username} onChange={e => handleChange(e)} />
                         </div>
                         <div className="login_right_form_password">

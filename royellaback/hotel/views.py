@@ -14,3 +14,12 @@ import json
 def Hotel(request):
     hotels = hotelSerializer(hotel.objects.get(id=1))
     return JsonResponse({"hotels" : hotels.data})
+
+@api_view(['PUT'])
+def updateHotel(request):
+    hotel1 = hotel.objects.get(id=1)
+    hotels = hotelSerializer(hotel1, data=request.data)
+    if hotels.is_valid():
+        hotels.save()
+        return Response ({'success':'Élément modifié'})
+    return Response(hotels.errors)           

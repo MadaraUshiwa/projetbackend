@@ -6,5 +6,5 @@ from django.contrib.auth.models import AbstractUser
 class Employe(models.Model):
     nom = models.CharField(max_length=70)
     poste = models.CharField(max_length=70)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
     citation = models.TextField()

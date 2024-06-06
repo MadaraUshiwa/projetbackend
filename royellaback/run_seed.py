@@ -10,6 +10,8 @@ from employe.seed import *
 from contact.seed import *
 from testimonial.seed import *
 from authentification.seed import *
+from blog.seed import *
+from faq.seed import *
 
 if __name__ == '__main__':
     # run()
@@ -17,6 +19,9 @@ if __name__ == '__main__':
     # runhotel()
     # runservices()
     # runmanager()
-    # run_contact()
+    # runcontact()
     # runtestimonial()
-    run_authentification()
+    # run_authentification()
+    runemploye()
+    # runblog()
+    # runfaq()

@@ -5,10 +5,5 @@ from django.contrib.auth.models import AbstractUser
 
 class Banner(models.Model):
     titre = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
     stars = models.IntegerField()
-    
-    
-
-    
-

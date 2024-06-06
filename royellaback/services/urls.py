@@ -6,6 +6,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('services/', index_services),
+    path('updateService/<int:id>/', updateService),
+    path('readService/<int:id>/', readService),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

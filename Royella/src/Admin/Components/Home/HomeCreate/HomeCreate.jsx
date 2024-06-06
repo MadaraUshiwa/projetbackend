@@ -67,8 +67,8 @@ export default function CreateHome() {
                     <div className='error' style={{display: messageError ? 'block' : 'none'}}>
                         {messageError}
                     </div>
-                    <button className='ajouter' type="submit">Ajouter</button>
-                    <Link className='back' to={'/admin'}><button>Retour</button></Link>
+                    <button className='ajouter w-[10%]' type="submit">Ajouter</button>
+                    <Link className='back w-[10%]' to={'/admin'}><button>Retour</button></Link>
 
                 </form>
             </div>

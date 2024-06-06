@@ -69,7 +69,8 @@ def getUser(request):
     mon_user = {
         'id': user.id,
         'username': user.username,
-        'email': user.email
+        'email': user.email,
+        'role': user.role_id
     }
     return JsonResponse({'user': mon_user})
 

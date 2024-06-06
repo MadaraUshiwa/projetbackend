@@ -7,6 +7,7 @@ from django.conf import settings
 
 urlpatterns = [
     path ('hotel/', Hotel),
+    path('updateHotel/', updateHotel)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

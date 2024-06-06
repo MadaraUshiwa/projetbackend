@@ -1,0 +1,18 @@
+.service-info{
+    color: black;
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 1%;
+}
+
+.service-image{
+    width: 15%;
+    margin-top: 1%;
+    height: 100px;
+}
+
+.update-service{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}

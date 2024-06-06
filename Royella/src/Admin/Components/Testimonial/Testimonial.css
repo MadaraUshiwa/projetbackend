@@ -1,0 +1,42 @@
+.table-testi-container table {
+    width: 100%;
+}
+
+.table-testi-container table thead tr {
+    width: 40%;
+}
+
+.table-testi-container table .first-col {
+    width: 10%;
+}
+
+.table-testi-container table .facilities-last-col {
+    width: 10%;
+}
+
+.table-testi-container table tbody tr {
+    height: 60px;
+}
+
+.table-testi-container table tbody tr .first-col {
+    width: 10%;
+}
+
+.table-testi-container table tbody tr .facilities-last-col {
+    width: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.table-testi-container table tbody tr td {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.table-testi-container table tbody tr td span {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

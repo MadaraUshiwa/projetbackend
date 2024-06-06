@@ -5,7 +5,11 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path ('employe/', Employe),
+    path ('employe/', employe),
+    path('deleteEmployees/<int:id>/', deleteEmployees),
+    path('updateEmployees/<int:id>/', updateEmployees),
+    path('readEmployees/<int:id>/', readEmployees),
+    path('createEmployees/', createEmployees),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
