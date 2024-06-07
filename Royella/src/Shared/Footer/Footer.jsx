@@ -4,11 +4,26 @@ import Brand from "../../Components/Brand/Brand";
 import { BiEnvelope, BiLogoLinkedin } from "react-icons/bi";
 import { FaFacebookF, FaPinterestP, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 const Footer = () => {
+  const [contact, setContact] = useState(null);
+
+  useEffect(() => {
+    axios.get("http://127.0.0.1:8000/api/contact/")
+      .then((response) => {
+        if (response.data.contact) {
+          setContact(response.data.contact);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <>
       <Brand />
-      <footer className="">
+    {contact ?       <footer className="">
         {/* footer content */}
         <div className="bg-lightBlack   ">
           <div className="Container  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 2xl:grid-cols-12 gap-5 lg:gap-3 xl:gap-5 2xl:gap-[30px] pt-14 lg:pt-[100px] ">
@@ -30,14 +45,14 @@ const Footer = () => {
                         className="text-khaki w-5 h-5 mr-3 2xl:mr-4 "
                         size={14}
                       />
-                      +980 (1234) 567 220
+                      {contact.tel}
                     </p>
                     <p className="flex items-center text-lightGray font-Lora font-normal text-sm sm:text-base leading-[26px]">
                       <BiEnvelope
                         className="text-khaki w-5 h-5 mr-3 2xl:mr-4 "
                         size={14}
                       />
-                      example@yahoo.com
+                      {contact.email}
                     </p>
                     <p className="flex items-center text-lightGray font-Lora font-normal text-sm sm:text-base leading-[26px]">
                       <IoLocationSharp
@@ -45,7 +60,7 @@ const Footer = () => {
                         size={14}
                       />
                       102/B New Elephant Rd <br />
-                      Dhaka - 1212
+                      {contact.location}
                     </p>
                   </div>
                 </div>
@@ -158,7 +173,7 @@ const Footer = () => {
             {` © ${new Date().getFullYear()} , Royella. All Rights Reserved.`}
           </div>
         </div>
-      </footer>
+      </footer> : null}
     </>
   );
 };

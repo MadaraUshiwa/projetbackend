@@ -1,15 +1,34 @@
 import { MdEmail, MdOutlineShareLocation } from "react-icons/md";
 import BreadCrumb from "../../BreadCrumb/BreadCrumb";
 import { IoIosCall } from "react-icons/io";
+import { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
 
 const Contact = () => {
+
+  const [contact, setContact] = useState(null);
+
+  useEffect(() => {
+    axios.get("http://127.0.0.1:8080/api/contact/")
+      .then((response) => {
+        if (response.data.contact) {
+          setContacts(response.data.contact);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div>
       <BreadCrumb title="Contact " />
 
       {/* Contact */}
       {/* Contact with Us */}
-      <div className="py-20 2xl:py-[120px] dark:bg-lightBlack">
+    <>
+      {contact ?       <div className="py-20 2xl:py-[120px] dark:bg-lightBlack">
         <div className="Container bg-whiteSmoke dark:bg-normalBlack px-7 md:px-10 lg:px-14 2xl:px-20 py-10 md:py-14 lg:py-18 xl:py-20 2xl:py-[100px] ">
           <div className="flex items-center flex-col md:flex-row">
             <div
@@ -61,7 +80,7 @@ const Contact = () => {
                     Send Email
                   </p>
                   <p className="font-Garamond text-lg sm:text-xl md:text-[22px] leading-[26px] text-lightBlack dark:text-white font-medium ">
-                    example@gmail.com
+                    {contact.email}
                   </p>
                 </div>
               </div>
@@ -168,7 +187,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> : null}
+    </>
 
       {/* google map */}
       <div data-aos="fade-down" data-aos-duration="1000">
